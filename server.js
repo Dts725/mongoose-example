@@ -45,8 +45,8 @@ app.use((req, res, next) => {
 });
 
 /**
-* router
-*/
+ * router
+ */
 app.get('/', (req, res) => {
 	console.log('before render');
 	res.render('index');
@@ -67,8 +67,8 @@ app.get('/login/:signupEmail', (req, res) => {
 
 
 /**
-* signup handler
-*/
+ * signup handler
+ */
 app.post('/signup', (req, res, next) => {
 	new User(req.body).save().then(doc => {
 		res.redirect('/login/' + doc.email);
@@ -76,7 +76,7 @@ app.post('/signup', (req, res, next) => {
 });
 
 /**
- *login handler
+ * login handler
  */
 app.post('/login', (req, res) => {
 	User.findOne(req.body).then(doc=>{
